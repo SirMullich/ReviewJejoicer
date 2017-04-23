@@ -94,7 +94,7 @@ namespace ReviewJuicer
             return false;
         }
 
-        public double CalculateRatingValue()
+        public void CalculateRatingValue()
         {
             val = 0;
             foreach (var score in scores)
@@ -103,7 +103,26 @@ namespace ReviewJuicer
             }
             val /= (double)scores.Count;
 
-            return val;
+            GenerateText();
+            text = text.Substring(0, text.Length - 2);
+            text += ".";
+        }
+
+        public virtual void GenerateText()
+        {
+            frequentlyUsed.Sort();
+            text = title + ": ";
+            int j = 0;
+            for (int i = 0; i < frequentlyUsed.Count && j < 3; i++)
+            {
+                text += frequentlyUsed[i].Word + ", ";
+                j++;
+            }
+        }
+
+        public void ProcessRating()
+        {
+            CalculateRatingValue();
         }
     }
 
@@ -125,6 +144,18 @@ namespace ReviewJuicer
         {
             this.actor = actor;
         }
+
+        public override void GenerateText()
+        {
+            frequentlyUsed.Sort();
+            text = actor.Name + " " + actor.Surname + " played: ";
+            int j = 0;
+            for (int i = 0; i < frequentlyUsed.Count && j < 3; i++)
+            {
+                text += frequentlyUsed[i].Word + ", ";
+                j++;
+            }
+        }
     }
 
     public class DirectorRating : Rating
@@ -145,6 +176,18 @@ namespace ReviewJuicer
         public DirectorRating(Person dir) : this()
         {
             director = dir;
+        }
+
+        public override void GenerateText()
+        {
+            frequentlyUsed.Sort();
+            text = director.Name + " " + director.Surname + " directed: ";
+            int j = 0;
+            for (int i = 0; i < frequentlyUsed.Count && j < 3; i++)
+            {
+                text += frequentlyUsed[i].Word + ", ";
+                j++;
+            }
         }
 
     }

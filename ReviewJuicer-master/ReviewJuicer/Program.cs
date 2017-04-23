@@ -38,17 +38,34 @@ In summary this is a super hero movie that even Marvel fans will appreciate as i
                 );
 #endregion
 
-
+            // DANIL, SUDA POSMOTRI
             rj.ProcessReviews();
             foreach (var rating in rj.GetMovieRatings())
             {
-                Console.WriteLine(rating.title);
-                Console.WriteLine("rating = " + rating.CalculateRatingValue());
-                rating.frequentlyUsed.Sort();
-                foreach (var word in rating.frequentlyUsed)
+                Console.WriteLine("Rating (title) = " + rating.title);
+
+                if (rating.GetType() == typeof(ActorRating))
                 {
-                    Console.WriteLine(word.Word + ": " + word.Count);
+                    ActorRating ar = rating as ActorRating;
+                    Console.WriteLine("Rating actor (Person) name = " + ar.actor.Name);
+                    Console.WriteLine("Rating actor (Person) surname = " + ar.actor.Surname);
                 }
+
+                if (rating.GetType() == typeof(DirectorRating))
+                {
+                    DirectorRating dr = rating as DirectorRating;
+                    Console.WriteLine("Rating director (Person) name = " + dr.director.Name);
+                    Console.WriteLine("Rating director (Person) surname = " + dr.director.Surname);
+                }
+
+                // !!! IMPORTANT !!!
+                // ProcessRating ДОЛЖЕН ВЫЗЫВАТЬСЯ ДО ОБРАЩЕНИЯ К text и val
+                // Потому что ProcessRating генерирует text и val
+                rating.ProcessRating();
+                
+                Console.WriteLine("Rating (val) = " + rating.val);
+                Console.WriteLine("Rating (text) = " + rating.text);
+                Console.WriteLine();
             }
         }
     }
