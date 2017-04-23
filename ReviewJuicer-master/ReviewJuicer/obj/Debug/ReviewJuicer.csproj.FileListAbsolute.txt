@@ -1,0 +1,6 @@
+D:\Dev\Workspaces\D&D\ReviewJuicer\ReviewJuicer-master\ReviewJuicer\bin\Debug\ReviewJuicer.exe.config
+D:\Dev\Workspaces\D&D\ReviewJuicer\ReviewJuicer-master\ReviewJuicer\bin\Debug\ReviewJuicer.exe
+D:\Dev\Workspaces\D&D\ReviewJuicer\ReviewJuicer-master\ReviewJuicer\bin\Debug\ReviewJuicer.pdb
+D:\Dev\Workspaces\D&D\ReviewJuicer\ReviewJuicer-master\ReviewJuicer\obj\Debug\ReviewJuicer.csprojResolveAssemblyReference.cache
+D:\Dev\Workspaces\D&D\ReviewJuicer\ReviewJuicer-master\ReviewJuicer\obj\Debug\ReviewJuicer.exe
+D:\Dev\Workspaces\D&D\ReviewJuicer\ReviewJuicer-master\ReviewJuicer\obj\Debug\ReviewJuicer.pdb
