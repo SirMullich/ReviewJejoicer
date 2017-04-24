@@ -101,11 +101,7 @@ namespace ReviewJuicer
             {
                 val += (double)score;
             }
-            val /= (double)scores.Count;
-
-            GenerateText();
-            text = text.Substring(0, text.Length - 2);
-            text += ".";
+            val /= (double)scores.Count;  
         }
 
         public virtual void GenerateText()
@@ -123,6 +119,9 @@ namespace ReviewJuicer
         public void ProcessRating()
         {
             CalculateRatingValue();
+            GenerateText();
+            text = text.Substring(0, text.Length - 2);
+            text += ".";
         }
     }
 
@@ -143,6 +142,7 @@ namespace ReviewJuicer
         public ActorRating(Person actor) : this()
         {
             this.actor = actor;
+            keywords.AddRange(new string[] { actor.Name, actor.Surname, "actor", "actress" });
         }
 
         public override void GenerateText()
@@ -176,6 +176,7 @@ namespace ReviewJuicer
         public DirectorRating(Person dir) : this()
         {
             director = dir;
+            keywords.AddRange(new string[] { director.Name, director.Surname, "director" });
         }
 
         public override void GenerateText()
@@ -201,7 +202,7 @@ namespace ReviewJuicer
             scores = new List<int>();
             text = "";
             // temporary MOVIE and FILM are in this category
-            keywords = new List<string> { "plot", "story", "content", "movie", "film" };
+            keywords = new List<string> { "plot", "story", "content", "movie", "film", "picture" };
             vibewords = new VibeWords();
             frequentlyUsed = new List<DescriptionWord>();
         }

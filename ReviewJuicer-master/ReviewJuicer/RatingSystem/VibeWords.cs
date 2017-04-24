@@ -21,23 +21,40 @@ namespace ReviewJuicer.RatingSystem
         // 2 * 3 + 1 * 4 / 3
         public VibeWords()
         {
-            SuperPuper = new List<string> { "best", "perfect", "ideal", "amazing", "super", "awesome", "fascinating", "incredible", "marvelous", "prodigious", "shocking", "stunning", "surprising", "unbelievable", "excellent" };
+            SuperPuper = new List<string> { "best", "finest", "outstanding", "terrific",
+                "perfect", "ideal", "superb", "splendid", "impeccable", "flawless", "awesome",
+                "amazing", "super", "awesome", "fascinating", "incredible", "marvelous",
+                "staggering", 
+                "startling", "prodigious", "shocking", "stunning", "surprising", "unbelievable", "excellent" };
 
             superPuperScore = 10;
 
-            Good = new List<string> { "acceptable", "good", "wonderful", "admirable", "stupendous", "honorable", "honourable", "nice", "great", "positive", "satisfactory", "satisfying" };
+            Good = new List<string> { "acceptable", "good", "wonderful", "admirable",
+                "astonishing", "fine", "cool", "enjoyable", "fabulous", "magnificent", "marvelous", 
+                "pleasant", "pleasing", "wondrous", "remarkable", "tremendous", "pleasing",
+                "delightful", 
+                "stupendous", "honorable", "honourable", "nice", "great", "positive", "satisfactory", "satisfying" };
 
             goodScore = 7;
 
-            Neutral = new List<string> { "cool", "neutral", "good", "impartial", "indifferent", "inactive" };
+            Neutral = new List<string> { "cool", "neutral", "good", "impartial", "indifferent", "inactive",
+                "sufficient", "modest", "satisfactory", "satisfying", 
+                "tolerable", "common", "fair", "decent", "average", "admissible" };
 
             neutralScore = 5;
 
-            Bad = new List<string> { "bad", "blah", "downer", "faulty", "unsatisfactory", "incorrect", "sad", "unacceptable", "poor", "crummy", "cheap", "imperfect" };
+            Bad = new List<string> { "bad", "blah", "downer", "faulty", "unsatisfactory", "unsatisfying", 
+                "ugly", "unpleasant", "horrible", "dire", "distressing", "horrendous", "horrid", 
+                "nasty", "terrible", "lousy", "hideous", "unwanted", "unappealing", 
+                "obnoxious", "questionable", "repulsive", "repellent", "silly", 
+                "incorrect", "sad", "unacceptable", "poor", "crummy", "cheap", "imperfect" };
 
             badScore = 2;
 
-            Shit = new List<string> { "atrocious", "awful", "dreadful", "crap", "crappy", "shit", "gross" };
+            Shit = new List<string> { "atrocious", "awful", "dreadful", "crap", "crappy",
+                "depressing", "gruesome", "nasty", "abhorent", "disgusting", "abhorent", 
+                "abhorent", "appaling", "shameful", "terrible", "idiot", "idiotic", "foolish", 
+                "shit", "gross" };
 
             shitScore = 0;
         }
