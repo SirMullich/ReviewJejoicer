@@ -10,7 +10,7 @@ namespace ReviewJuicer.RatingSystem
     {
         public static string RemovePunctuation(string str)
         {
-            List<char> punctuation = new List<char> { '.', ',', '?', ':', ';', '@', '\'' };
+            List<char> punctuation = new List<char> { '.', ',', '?', ':', ';', '@', '\'', '\n' };
             if (punctuation.Exists(a => a == str[str.Length - 1]))
             {
                 return str.Remove(str.Length - 1);
